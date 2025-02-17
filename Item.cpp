@@ -8,13 +8,15 @@ Item::Item()
     _duration = DURATION;
 }
 
-void Item::Collect(float millis)
+bool Item::Collect(float millis)
 {
     _duration -= millis;
     if (_duration <= 0)
     {
         NewPixel();
+        return true;
     }
+    return false;
 }
 
 void Item::NewPixel()

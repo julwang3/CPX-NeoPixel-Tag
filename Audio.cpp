@@ -1,44 +1,57 @@
-#include <Adafruit_CircuitPlayground.h>
 #include "Audio.h"
 
 #define AUDIO_DURATION 100
 
-// TODO
-//const Audio _gameStart;
-//const Audio _pickupItem;
-//const Audio _spawnEnemy;
-//const Audio _scareEnemy;
-//const Audio _gameOver;
+const Audio _gameStart(262, 250);
+const Audio _pickupItem(523, 100);
+const Audio _spawnEnemy(131, 150);
+const Audio _scareEnemy(988, 50);
+const Audio _gameOver(123, 300);
 
-void AudioPlayer::GameStart()
+AudioPlayer::AudioPlayer()
 {
-//    PlayAudio(_gameStart);
+    // int gameStartNotes[] = {523, 784, 1046};
+    // int gameStartDuration[] = {100, 100, 300};
+    // _gameStart = Melody(3, gameStartNotes, gameStartDuration);
+
+    // int pickupItemNotes[] = {523, 1046};
+    // int pickupItemDuration[] = {100, 200};
+    // _pickupItem = Melody(2, pickupItemNotes, pickupItemDuration);
+
+    // int spawnEnemNotes[] = {123};
+    // int spawnEnemDuration[] = {100};
+    // _spawnEnemy = Melody(1, spawnEnemNotes, spawnEnemDuration);
+
+    // int scareEnemyNotes[] = {988};
+    // int scareEnemyDuration[] = {250};
+    // _scareEnemy = Melody(1, scareEnemyNotes, scareEnemyDuration);
+
+    // int gameOverNotes[] = {262, 196, 131};
+    // int gameOverDuration[] = {100, 100, 300};
+    // _gameOver = Melody(3, gameOverNotes, gameOverDuration);
 }
 
-void AudioPlayer::PickupItem()
+const Audio AudioPlayer::GameStart()
 {
-//    PlayAudio(_pickupItem);
+   return _gameStart;
 }
 
-void AudioPlayer::SpawnEnemy()
+const Audio AudioPlayer::PickupItem()
 {
-//    PlayAudio(_spawnEnemy);
+    return _pickupItem;
 }
 
-void AudioPlayer::ScareEnemy()
+const Audio AudioPlayer::SpawnEnemy()
 {
-//    PlayAudio(_scareEnemy);
+    return _spawnEnemy;
 }
 
-void AudioPlayer::GameOver()
+const Audio AudioPlayer::ScareEnemy()
 {
-//    PlayAudio(_gameOver);
+    return _scareEnemy;
 }
 
-void AudioPlayer::PlayAudio(const Audio audio)
+const Audio AudioPlayer::GameOver()
 {
-    for (int i = 0; i < audio.Size; i++)
-    {
-        CircuitPlayground.playTone(audio.Notes[i], 100);
-    }
+    return _gameOver;
 }

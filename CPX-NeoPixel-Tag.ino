@@ -14,7 +14,7 @@
 GameState _state;
 Player _player;
 Item _item;
-Enemy _enemy[ENEMIES] ={
+Enemy _enemy[ENEMIES] = {
     Enemy(1, 750, 10000),
     Enemy(-1, 500, 30000),
 };
@@ -24,6 +24,10 @@ bool _prev_is_start;
 int _prev_player_pixel;
 unsigned long _prev_millis;
 bool _prev_is_scream;
+bool _prev_enemy_active[ENEMIES] = {
+    false,
+    false,
+};
 
 void setup() 
 {   
@@ -91,20 +95,30 @@ void loop()
         // Check if player picked up item
         if (is_item_touch && player_pixel == _item.GetPixel())
         {
-            _item.Collect(millis_difference);
-            _audioPlayer.PickupItem();
+            bool is_collected = _item.Collect(millis_difference);
+            if (is_collected)
+            {
+                play_audio(_audioPlayer.PickupItem());
+            }
         }
 
         // Move enemy
         bool collide = false;
         for (int i = 0; i < ENEMIES; i++)
         {
-            if (_enemy[i].IsActive())
+            bool is_active = _enemy[i].IsActive();
+            if (is_active)
             {
+                // Just spawned
+                if (!_prev_enemy_active[i])
+                {
+                    play_audio(_audioPlayer.SpawnEnemy());
+                }
+                // Scare enemy
                 if (is_scream & !_prev_is_scream)
                 {
                     _enemy[i].Scare();
-                    _audioPlayer.ScareEnemy();
+                    play_audio(_audioPlayer.ScareEnemy());
                 }
                 if (!is_scream & _prev_is_scream)
                 {
@@ -112,6 +126,7 @@ void loop()
                 }
             }
             collide |= _enemy[i].Update(player_pixel, millis_difference);
+            _prev_enemy_active[i] = is_active;
         }
         // Check player collision with enemy
         if (collide)
@@ -172,11 +187,20 @@ void update_state(GameState state)
         {
             _enemy[i].Spawn();
         }
-        _audioPlayer.GameStart();
+        
+        play_audio(_audioPlayer.GameStart());
     }
     else if (state == STOP)
     {
-        _audioPlayer.GameOver();
+        play_audio(_audioPlayer.GameOver());
     }
     _state = state;
+}
+
+void play_audio(const Audio audio)
+{
+    if (audio.Duration > 0)
+    {
+        CircuitPlayground.playTone(audio.Note, audio.Duration);
+    }
 }

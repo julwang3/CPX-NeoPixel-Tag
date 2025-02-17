@@ -24,7 +24,7 @@ class Item
 public:
     Item();
 
-    void Collect(float millis);
+    bool Collect(float millis);
 
     const int GetPixel() { return ITEM_PIXELS[_pixel_index]; }
     const int* GetCapTouch() { return ITEM_CAPTOUCH[_pixel_index]; }

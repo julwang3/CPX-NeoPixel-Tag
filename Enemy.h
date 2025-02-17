@@ -1,5 +1,4 @@
 #include "Game.h"
-#include "Audio.h"
 
 #define RUN_AWAY_SPEED_MULT 2
 
@@ -40,6 +39,4 @@ private:
     long _current_duration;
     long _run_away_duration;
     long _cooldown_duration;
-
-    AudioPlayer _audioPlayer;
 };

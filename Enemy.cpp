@@ -135,7 +135,6 @@ void Enemy::SetState(State state)
     {
         _current_duration = _duration;
         _run_away_duration = _duration;
-        _audioPlayer.SpawnEnemy();
     }
     else
     {
