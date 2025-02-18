@@ -13,4 +13,5 @@ A fast-paced, tilt-controlled game of tag built for the Adafruit Circuit Playgro
 <img src="Controls.png" alt="" />
 
 ## Demo
-https://github.com/user-attachments/assets/3d304552-732c-4dc3-a00e-579b77ca45d1
+
+https://github.com/user-attachments/assets/77ee8a3e-51d4-4acc-8ba9-bcf733138853
