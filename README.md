@@ -1,5 +1,5 @@
 # CPX NeoPixel Tag
-A fast-paced, tilt-controlled game of tag built on the Circuit Playground Express using the Arduino IDE. Collect as many items as you can while evading enemies and scaring them away with your voice!
+A fast-paced, tilt-controlled game of tag built for the Adafruit Circuit Playground Express using the Arduino IDE. Collect as many items as you can while evading enemies and scaring them away with your voice!
 
 ## Demo
 
