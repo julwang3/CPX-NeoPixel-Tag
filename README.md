@@ -24,4 +24,6 @@ https://github.com/user-attachments/assets/77ee8a3e-51d4-4acc-8ba9-bcf733138853
 - `Item.h` / `Item.cpp`: Handles item pickup and regeneration based on player input from the capacitative touch pads.
 - `Audio.h` / `Audio.cpp`: Stores and returns SFXs associated with specific game interactions.
 
-[<img src="ArchitectureDiagram.jpeg" alt="" target="_blank"/>](https://lucid.app/lucidchart/d9d0fb06-87ba-4da9-8b41-c63ae2234aa7/edit?viewport_loc=-1940%2C-2184%2C3028%2C2612%2C0_0&invitationId=inv_ce79e4ad-e6a7-4859-9c5c-a2cf11087566)
+<a href="https://lucid.app/lucidchart/d9d0fb06-87ba-4da9-8b41-c63ae2234aa7/edit?viewport_loc=-1940%2C-2184%2C3028%2C2612%2C0_0&invitationId=inv_ce79e4ad-e6a7-4859-9c5c-a2cf11087566)" target="_blank">
+  <img src="ArchitectureDiagram.jpeg" alt=""/>
+</a>
