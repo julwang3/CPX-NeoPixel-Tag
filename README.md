@@ -23,3 +23,5 @@ https://github.com/user-attachments/assets/77ee8a3e-51d4-4acc-8ba9-bcf733138853
 - `Enemy.h` / `Enemy.cpp`: Handle enemy movement and AI using a FSM.
 - `Item.h` / `Item.cpp`: Handles item pickup and regeneration based on player input from the capacitative touch pads.
 - `Audio.h` / `Audio.cpp`: Stores and returns SFXs associated with specific game interactions.
+
+[![ArchitectureDiagram](https://github.com/user-attachments/assets/bbd8a6fd-64a1-41c0-adb5-5182fb981f90)](https://lucid.app/lucidchart/d9d0fb06-87ba-4da9-8b41-c63ae2234aa7/edit?viewport_loc=-1940%2C-2184%2C3028%2C2612%2C0_0&invitationId=inv_ce79e4ad-e6a7-4859-9c5c-a2cf11087566)
