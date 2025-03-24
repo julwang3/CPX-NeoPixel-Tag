@@ -17,9 +17,9 @@ https://github.com/user-attachments/assets/77ee8a3e-51d4-4acc-8ba9-bcf733138853
 <img src="Controls.png" alt="" />
 
 ## File Hierarchy
-- `CPX-NeoPixel-Tag.ino`: Main Arduino script written in C that handles hardware sensor input from the CPX and the overall gameplay state and logic.
+- `Game.ino`: Main Arduino script written in C that handles hardware sensor input from the CPX and the overall gameplay state and logic.
+- `Game.h`: Header file that initializes `enum GameState`, `struct Color`, and numerous constants used across multiple scripts.
 - `Player.h` / `Player.cpp`: Handle player movement based on acceleration data from the accelerometer.
 - `Enemy.h` / `Enemy.cpp`: Handle enemy movement and AI using a FSM.
 - `Item.h` / `Item.cpp`: Handles item pickup and regeneration based on player input from the capacitative touch pads.
 - `Audio.h` / `Audio.cpp`: Stores and returns SFXs associated with specific game interactions.
-- `Game.h`: Header file that initializes `enum`, `struct`, and variables used across multiple scripts.

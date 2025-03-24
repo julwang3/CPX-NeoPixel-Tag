@@ -26,24 +26,6 @@ struct Color
     }
 };
 
-struct Audio
-{
-    int Note;
-    int Duration;
-
-    Audio()
-    {
-      Note = 0;
-      Duration = 0;
-    }
-    
-    Audio(int note, int duration)
-    {
-        Note = note;
-        Duration = duration;
-    }
-};
-
 // Constants
 const int PIXELS_CCLOCKWISE[PIXELS] = {0,1,2,3,4,11,5,6,7,8,9,10};
 

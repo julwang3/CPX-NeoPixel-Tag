@@ -5,6 +5,24 @@
 
 #define AUDIO_DURATION 100
 
+struct Audio
+{
+    int Note;
+    int Duration;
+    
+    Audio(int note, int duration)
+    {
+        Note = note;
+        Duration = duration;
+    }
+};
+
+const Audio GAME_START(262, 250);
+const Audio PICKUP_ITEM(523, 100);
+const Audio SPAWN_ENEMY(131, 150);
+const Audio SCARE_ENEMY(988, 50);
+const Audio GAME_OVER(123, 300);
+
 class AudioPlayer
 {
 public:

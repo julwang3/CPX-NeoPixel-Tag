@@ -1,32 +1,26 @@
 #include "Audio.h"
 
-const Audio _gameStart(262, 250);
-const Audio _pickupItem(523, 100);
-const Audio _spawnEnemy(131, 150);
-const Audio _scareEnemy(988, 50);
-const Audio _gameOver(123, 300);
-
 const Audio AudioPlayer::GameStart()
 {
-   return _gameStart;
+   return GAME_START;
 }
 
 const Audio AudioPlayer::PickupItem()
 {
-    return _pickupItem;
+    return PICKUP_ITEM;
 }
 
 const Audio AudioPlayer::SpawnEnemy()
 {
-    return _spawnEnemy;
+    return SPAWN_ENEMY;
 }
 
 const Audio AudioPlayer::ScareEnemy()
 {
-    return _scareEnemy;
+    return SCARE_ENEMY;
 }
 
 const Audio AudioPlayer::GameOver()
 {
-    return _gameOver;
+    return GAME_OVER;
 }
