@@ -17,6 +17,7 @@ Enemy::Enemy(int direction, long duration, long spawn_duration)
 
 void Enemy::Spawn()
 {
+    // Set spawn location based on movement direction
     if (_direction == 1)
     {
         _pixel = PIXEL_RIGHT_START;
@@ -26,6 +27,7 @@ void Enemy::Spawn()
         _pixel = PIXEL_LEFT_START;
     }
     
+    // Initialize in SPAWN state
     _current_duration = _spawn_duration;
     _state = SPAWN;
 }
@@ -36,7 +38,7 @@ bool Enemy::Update(int player_pixel, long elapsed_duration)
 
     if (_state == SPAWN)
     {
-        // Spawn
+        // Set active
         if (_current_duration <= 0)
         {
             SetState(CHASE);
@@ -110,7 +112,7 @@ void Enemy::Move(int player_pixel)
     }
     else if (_state == RUN_AWAY | _state == RUN_AWAY_COOLDOWN)
     {
-        // Chase after the player
+        // Run away from the player
         if (distance > 0)
         {
             _direction = (distance < (PIXELS_DISPLAY / 2)) ? -1 : 1;
@@ -131,6 +133,7 @@ void Enemy::Move(int player_pixel)
 
 void Enemy::SetState(State state)
 {
+    // Update duration (and direction) based on state
     if (_state == SPAWN & state == CHASE)
     {
         _current_duration = _duration;
@@ -154,5 +157,6 @@ void Enemy::SetState(State state)
         _current_duration = _run_away_duration;
         _direction *= -1;
     }
+    // Update state
     _state = state;
 }

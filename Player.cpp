@@ -2,13 +2,14 @@
 
 Player::Player()
 {
-    _GeneratePixelTilts();
+    GeneratePixelTilts();
 }
 
 int Player::Move(float x, float y)
 {
     int pixel = 0;
     float min_distance = 3 * TILT_LIMIT;
+    // Identify NeoPixel closest to given xy tilt values
     for (int i = 0; i < (PIXELS - 1); i++) // Ignore enemy base (11)
     {
         float x_dist = x - _tilts[i][0];
@@ -25,12 +26,7 @@ int Player::Move(float x, float y)
     return pixel;
 }
 
-const int Player::GetPixel()
-{
-    return _pixel;
-}
-
-void Player::_GeneratePixelTilts()
+void Player::GeneratePixelTilts()
 {
     float increments = TILT_LIMIT / 3.0;
       

@@ -7,6 +7,7 @@
 #define PIXEL_RIGHT_START 4
 #define ITEMS 4
 
+// Enums
 enum GameState
 {
     START,
@@ -14,6 +15,7 @@ enum GameState
     STOP
 };
 
+// Structs
 struct Color 
 { 
     int R; int G; int B;
@@ -42,6 +44,7 @@ struct Audio
     }
 };
 
+// Constants
 const int PIXELS_CCLOCKWISE[PIXELS] = {0,1,2,3,4,11,5,6,7,8,9,10};
 
 const Color COLOR_PLAYER(254, 254, 254);
